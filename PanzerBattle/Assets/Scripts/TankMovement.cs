@@ -6,6 +6,8 @@ public class TankMovement : MonoBehaviour {
 
 	private Transform parent;
 
+	private float h;
+
 	// Use this for initialization
 	void Start () {
 		parent = transform.parent;
@@ -13,7 +15,12 @@ public class TankMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float h = Input.GetAxis ("Horizontal");
+		if (this.tag == "Player1") {
+			h = Input.GetAxis ("Horizontal1");
+		} else {
+			h = Input.GetAxis ("Horizontal2");
+		}
+
 		parent.Translate (0, h * Time.deltaTime * 5, 0);
 	}
 }

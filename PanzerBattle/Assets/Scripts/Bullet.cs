@@ -14,12 +14,15 @@ public class Bullet : MonoBehaviour {
 
 		//if you don't have a component of that type (Rigidbody per se)
 		//a null will be returned
-
-		rb.AddRelativeForce (0, 20, 0, ForceMode.Impulse);
+		rb.AddRelativeForce (0, 12, 0, ForceMode.Impulse);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void OnCollisionEnter(Collision c){
+		Destroy (gameObject);
 	}
 }
