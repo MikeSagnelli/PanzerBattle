@@ -1,10 +1,12 @@
+//												Author: Michelle Sagnelli
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	private Rigidbody rb;
+	private Rigidbody rb; //Used for physics engine, shots fired!
+	public AudioSource audio; //Used for collision sound
 
 	// Use this for initialization
 	void Start () {
@@ -15,11 +17,12 @@ public class Bullet : MonoBehaviour {
 		//if you don't have a component of that type (Rigidbody per se)
 		//a null will be returned
 		rb.AddRelativeForce (0, 12, 0, ForceMode.Impulse);
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnCollisionEnter(Collision c){

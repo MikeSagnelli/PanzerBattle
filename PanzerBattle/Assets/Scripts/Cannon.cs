@@ -1,3 +1,4 @@
+//												Author: Michelle Sagnelli
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,13 @@ using UnityEngine;
 public class Cannon : MonoBehaviour {
 
 	//we need something to clone
-	public GameObject bPreFav, bullet;
+	public GameObject bPreFav, //Used to keep cloning bullet gameObject
+	 									bullet;
 
-	private Transform child, parent;
+	private Transform child, //Bullets origin
+	 									parent; //Tank head rotation
 
-	private float oldJ, v, j;
+	private float oldJ, v, j; //Inputs
 
 	//use this for initialization
 	void Start () {
@@ -24,6 +27,7 @@ public class Cannon : MonoBehaviour {
 	//update is called once per frame
 	void Update () {
 
+		//Only 2 joysticks will work
 		if (this.tag == "Player1") {
 			v = Input.GetAxis ("Vertical1");
 

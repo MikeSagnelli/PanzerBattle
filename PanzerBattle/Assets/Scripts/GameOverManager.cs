@@ -1,37 +1,41 @@
+//												Author: Michelle Sagnelli
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameOverManager : MonoBehaviour {
 
-	public TankHP player1, player2;
+	public TankHP player1, player2; //Retrieve HP for animation trigger
 
-	public float restartDelay = 5f;
+	public float closeDelay = 5f; //Close delay
 
 	Animator anim;
 	Animator anim2;
 
-	float restartTimer;
+	float closeTimer;
 
 	// Use this for initialization
 	void Start () {
+		//Retrieve animator
 		anim = GetComponent<Animator> ();
+		//Retrieve Player1 HP
 		player1 = GameObject.Find ("Player1").GetComponent<TankHP>();
+		//Retrieve Player 2 HP
 		player2 = GameObject.Find ("Player2").GetComponent<TankHP>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (player2.playerHp <= 0) {
 			anim.SetTrigger ("Player1");
-			restartTimer += Time.deltaTime;
+			closeTimer += Time.deltaTime;
 		}
 		if (player1.playerHp <= 0) {
 			anim.SetTrigger ("Player2");
-			restartTimer += Time.deltaTime;
+			closeTimer += Time.deltaTime;
 		}
 
-		if (restartTimer >= restartDelay) {
+		if (closeTimer >= closeDelay) {
 			Application.Quit ();
 		}
 	}
