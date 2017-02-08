@@ -5,29 +5,42 @@ using UnityEngine;
 public class Cannon : MonoBehaviour {
 
 	//we need something to clone
-	public GameObject go;
+	public GameObject bullet;
 
-	private Transform parent;
+	private Transform child, parent;
 
 	private float oldJ;
 
-	// Use this for initialization
+	//use this for initialization
 	void Start () {
-
+		//cannon rotation
 		parent = transform.parent;
-
+		//bullet spawn
+		child = transform.GetChild (0);
+		//only a bullet for each press
+		oldJ = 0;
 	}
-	
-	// Update is called once per frame
+
+	//update is called once per frame
 	void Update () {
 
-		float h = Input.GetAxis ("Horizontal");
-		parent.transform.Translate(0, h * Time.deltaTime, 0);
-
 		float v = Input.GetAxis ("Vertical");
-		parent.Rotate (0, 0, v * Time.deltaTime * -20);
+		if (this.tag == "Player1") {
+			parent.Rotate (0, 0, v * Time.deltaTime * 20);
+		} else {
+			parent.Rotate (0, 0, v * Time.deltaTime * -20);
+		}
 
 		float j = Input.GetAxis ("Jump");
+		if (j == 1 && oldJ == 0) {
+			bullet = Instantiate (bullet, child.position, child.rotation);
+			if (this.tag == "Player1") {
+				bullet.tag = "Bullet1";
+			} else {
+				bullet.tag = "Bullet2";
+			}
+		}
 
+		oldJ = j;
 	}
 }
