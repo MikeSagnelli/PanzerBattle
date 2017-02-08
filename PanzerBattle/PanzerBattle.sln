@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C8C45107-EC37-13E3-1869-71C96BEFF10C}") = "PanzerBattle", "Assembly-CSharp.csproj", "{F6DCA5BD-3B39-3751-0954-7EA28B84ECA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6DCA5BD-3B39-3751-0954-7EA28B84ECA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6DCA5BD-3B39-3751-0954-7EA28B84ECA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6DCA5BD-3B39-3751-0954-7EA28B84ECA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6DCA5BD-3B39-3751-0954-7EA28B84ECA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
