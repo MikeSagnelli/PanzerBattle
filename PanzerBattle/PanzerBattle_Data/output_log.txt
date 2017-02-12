@@ -26,10 +26,6 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.532077 ms
+UnloadTime: 1.356460 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 305c -> priority: 1 
-Joystick connected ("Wireless Controller").
- 
-(Filename:  Line: 1351)
-
+  Thread -> id: 1610 -> priority: 1 
